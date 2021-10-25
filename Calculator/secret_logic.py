@@ -2,7 +2,7 @@ def is_numeric(text):
     return text.isnumeric()
 
 
-def is_supported(text):
+def is_supported_operator(text):
     return text in ['+', '-', '*', '/']
 
 

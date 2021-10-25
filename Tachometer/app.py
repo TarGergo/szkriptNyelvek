@@ -1,3 +1,4 @@
+import multiprocessing
 import os
 from flask import Flask
 import report_generator_service
@@ -16,7 +17,7 @@ if __name__ == '__main__':
     print('Hello')
 
 
-REPORT_GENERATOR_PID = os.fork()
+REPORT_GENERATOR_PID = multiprocessing.Queue()
 if REPORT_GENERATOR_PID == 0:
     report_generator_service.shcedule_report_generation()
     exit(0)
